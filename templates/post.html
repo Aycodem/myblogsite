@@ -1,0 +1,25 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'poststyle.css' %}">
+</head>
+<body>
+    <div class="blogname">
+        <p id="blogtitle">Ayo blog</p>
+    </div>
+  <div class="posts-container">
+    <div class="post">
+        <img src="{{posts.img.url}}" alt="{{posts.title}}"/>
+        <a style="text-decoration:none" href="/">
+        <h1 class="post-headings">{{posts.title}}</h1>
+        <h5 class="post-date">{{posts.created_at}}</h5>
+        <div class="body-container">
+        <p class="post-body">{{posts.body}}</p>
+    </div>
+</a>
+    </div>
+  </div>

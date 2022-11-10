@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+    <body>
+        <div class="blogname">
+         <h1 id="blogtitle"  direction="left">Ayo blog</h1>
+        </div>
+        {% for post in posts reversed %}
+      <div class="posts-container">
+        <div class="post">
+            <img src="{{ post.img.url}}" alt="{{ post.title }}"/>
+            <a style="text-decoration: none" href="/post/{{post.id}}">
+            <h1 class="post-headings">{{post.title}}</h1>
+            <h5 class="post-date">{{post.created_at}}</h5>
+            <div class="body-container">
+            <p class="post-body">{{post.body|truncatewords:15}}</p>
+        </div>
+        
+    </a>
+    
+        </div>
+        {% endfor %}
+       
+      </div>
+    
+    
+    
+    
+    </body>
+
+
+    
+</html>
+
+
